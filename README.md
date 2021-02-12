@@ -1,19 +1,21 @@
-Covid Test Scraper
+Monitoring Twit Vaksin
 ===
-Script ini bertujuan mengumpulkan laporan Gugus Tugas Covid terkait perkembangan jumlah laboratorium dan jumlah test di Indonesia sejak 1 April 2020. Data diambil dari twit Bapak Agus (@aw3126) dan dari BNPB (@bnpb_indonesia). 
+Script ini bertujuan mengumpulkan laporan Kemenkes RI terkait perkembangan vaksinasi covid-19 sejak 31 Januari 2021. Data diambil dari twit KemenkesRI (@KemenkesRI). 
 Proses ocr menggunakan modul pytesseract.
 
 Requirements
 ---
 - Python 3
 - twint
+- tor
 - pytesseract
 
 Installation
 ---
-- `git clone https://github.com/lantip/covidtest-tracking-indonesia.git`
-- `cd covidtest-tracking-indonesia`
+- `git clone https://github.com/lantip/monitoring-tweet-vaksin.git`
+- `cd monitoring-tweet-vaksin`
 - Jalankan `pip install -r requirements.txt`
+- Install TOR dan jalankan.
 
 Usage
 ---
