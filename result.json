@@ -1,0 +1,110 @@
+[
+    {
+        "total_sasaran": "181554465",
+        "sasaran_sdmk": "1468764",
+        "tahap_1": "814585",
+        "tahap_2": "171270",
+        "cakupan_tahap_1": "55.46%",
+        "cakupan_tahap_2": "11.66%",
+        "date": "2021-02-08"
+    },
+    {
+        "total_sasaran": "181554465",
+        "sasaran_sdmk": "1468764",
+        "tahap_1": "845407",
+        "tahap_2": "221453",
+        "cakupan_tahap_1": "57.55%",
+        "cakupan_tahap_2": "15.07%",
+        "date": "2021-02-09"
+    },
+    {
+        "total_sasaran": "181554465",
+        "sasaran_sdmk": "1566959",
+        "tahap_1": "700266",
+        "tahap_2": "96553",
+        "cakupan_tahap_1": "45.55%",
+        "cakupan_tahap_2": "6.28%",
+        "date": "2021-02-04"
+    },
+    {
+        "total_sasaran": "181554465",
+        "sasaran_sdmk": "1468764",
+        "penambahan_tahap_1": "124139",
+        "penambahan_tahap_2": "57798",
+        "tahap_1": "969546",
+        "tahap_2": "279251",
+        "cakupan_tahap_1": "66.01%",
+        "cakupan_tahap_2": "19.01%",
+        "date": "2021-02-10"
+    },
+    {
+        "total_sasaran": "181554465",
+        "sasaran_sdmk": "1468764",
+        "penambahan_tahap_1": "47640",
+        "penambahan_tahap_2": "66354",
+        "tahap_1": "1017186",
+        "tahap_2": "345605",
+        "cakupan_tahap_1": "69.25%",
+        "cakupan_tahap_2": "23.53%",
+        "date": "2021-02-11"
+    },
+    {
+        "total_sasaran": "181554465",
+        "sasaran_sdmk": "1566958",
+        "tahap_1": "744884",
+        "tahap_2": "120725",
+        "cakupan_tahap_1": "48.45%",
+        "cakupan_tahap_2": "7.85%",
+        "date": "2021-02-05"
+    },
+    {
+        "total_sasaran": "181554465",
+        "sasaran_sdmk": "1629223",
+        "tahap_1": "784318",
+        "tahap_2": "139131",
+        "cakupan_tahap_1": "48.20%",
+        "cakupan_tahap_2": "8.55%",
+        "date": "2021-02-07"
+    },
+    {
+        "total_sasaran": "181554465",
+        "sasaran_sdmk": "1593620",
+        "tahap_1": "777096",
+        "tahap_2": "137207",
+        "cakupan_tahap_1": "49.66%",
+        "cakupan_tahap_2": "8.77%",
+        "date": "2021-02-06"
+    },
+    {
+        "total_sasaran": "181554465",
+        "sasaran_sdmk": "1531907",
+        "registrasi_ulang": "1502326",
+        "tahap_1": "596260",
+        "tahap_2": "51999",
+        "date": "2021-02-02"
+    },
+    {
+        "total_sasaran": "181554465",
+        "sasaran_sdmk": "1534937",
+        "registrasi_ulang": "1503941",
+        "tahap_1": "646026",
+        "tahap_2": "71621",
+        "date": "2021-02-03"
+    },
+    {
+        "total_sasaran": "181554465",
+        "sasaran_sdmk": "1531072",
+        "registrasi_ulang": "1501491",
+        "tahap_1": "539532",
+        "tahap_2": "35406",
+        "date": "2021-02-01"
+    },
+    {
+        "total_sasaran": "181554465",
+        "sasaran_sdmk": "1531072",
+        "registrasi_ulang": "1500721",
+        "tahap_1": "493133",
+        "tahap_2": "22548",
+        "date": "2021-01-31"
+    }
+]
