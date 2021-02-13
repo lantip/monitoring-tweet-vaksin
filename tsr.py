@@ -85,8 +85,9 @@ for i in f:
 #result = hasil.items()
 #sorted_result = sorted(result)
 #hasil = ocr_date('2020-05-09.jpg')
+newlist = sorted(result, key=lambda k: k['date']) 
 
 with open('result.json','w') as fle:
-    fle.write(json.dumps(result,indent=4))
+    fle.write(json.dumps(newlist,indent=4))
 
-print(json.dumps(result,indent=4))
+print(json.dumps(newlist,indent=4))

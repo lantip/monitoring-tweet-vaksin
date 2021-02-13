@@ -45,7 +45,7 @@ six==1.15.0
 soupsieve==2.2
 torpy==1.1.5
 traitlets==5.0.5
-twint==2.1.20
+-e git+https://github.com/himanshudabas/twint.git@dc45e7de5eb2a2f63b5c2b84d30da846d0bcbf5b#egg=twint
 typing-extensions==3.7.4.3
 urllib3==1.26.3
 wcwidth==0.2.5

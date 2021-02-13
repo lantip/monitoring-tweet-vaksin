@@ -7,7 +7,7 @@ verify_ssl = true
 
 [packages]
 ipython = "*"
-twint = "*"
+twint = {git = "https://github.com/himanshudabas/twint.git", editable = false, ref = "dc45e7de5eb2a2f63b5c2b84d30da846d0bcbf5b"}
 opencv-python = "*"
 pytesseract = "*"
 pillow = "*"
