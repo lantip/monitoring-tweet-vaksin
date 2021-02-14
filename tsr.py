@@ -16,7 +16,7 @@ def ocr_date(jpg):
     lines = []
     for lin in lins:
         if len(lin.strip()) > 1:
-            lines.append(lin)
+            lines.append(lin)    
     if "REGISTRASI ULANG" in lines:
         if "UPDATE VAKSINASI" in lines[1]:
             result['total_sasaran'] = lines[4].split()[1].replace('.','')
@@ -49,25 +49,38 @@ def ocr_date(jpg):
             result['cakupan_tahap_1'] = tahap[0]
             result['cakupan_tahap_2'] = tahap[1]
         else:
-            result['total_sasaran'] = lines[5].replace('.','')
-            result['sasaran_sdmk'] = lines[8].replace('.','')
-            if '(+' in lines[11]:
-                tahap = lines[11].split()
-                result['penambahan_tahap_1'] = tahap[0].replace('(','').replace(')','').replace('+','').replace('.','')
-                result['penambahan_tahap_2'] = tahap[1].replace('(','').replace(')','').replace('+','').replace('.','')
-                tahap = lines[12].split()
-                result['tahap_1'] = tahap[0].replace('(','').replace(')','').replace('+','').replace('.','')
-                result['tahap_2'] = tahap[1].replace('(','').replace(')','').replace('+','').replace('.','')
-                tahap = lines[15].split()
-                result['cakupan_tahap_1'] = tahap[0]
-                result['cakupan_tahap_2'] = tahap[1]
+            if 'VAKSINAS' in lines[0]:
+                result['total_sasaran'] = lines[6].replace('.','')
+                result['sasaran_sdmk'] = lines[9].replace('.','')
+                result['penambahan_tahap_1'] = lines[1].replace('(','').replace(')','').replace('+','').replace('.','')
+                result['penambahan_tahap_2'] = lines[12].replace('(','').replace(')','').replace('+','').replace('.','')
+                
+                result['tahap_1'] = lines[2].replace('(','').replace(')','').replace('+','').replace('.','')
+                result['tahap_2'] = lines[13].replace('(','').replace(')','').replace('+','').replace('.','')
+                
+                result['cakupan_tahap_1'] = lines[5]
+                result['cakupan_tahap_2'] = lines[16]
+
             else:
-                tahap = lines[10].split()
-                result['tahap_1'] = tahap[0].replace('(','').replace(')','').replace('+','').replace('.','')
-                result['tahap_2'] = tahap[1].replace('(','').replace(')','').replace('+','').replace('.','')
-                tahap = lines[13].split()
-                result['cakupan_tahap_1'] = tahap[0]
-                result['cakupan_tahap_2'] = tahap[1]
+                result['total_sasaran'] = lines[5].replace('.','')
+                result['sasaran_sdmk'] = lines[8].replace('.','')
+                if '(+' in lines[11]:
+                    tahap = lines[11].split()
+                    result['penambahan_tahap_1'] = tahap[0].replace('(','').replace(')','').replace('+','').replace('.','')
+                    result['penambahan_tahap_2'] = tahap[1].replace('(','').replace(')','').replace('+','').replace('.','')
+                    tahap = lines[12].split()
+                    result['tahap_1'] = tahap[0].replace('(','').replace(')','').replace('+','').replace('.','')
+                    result['tahap_2'] = tahap[1].replace('(','').replace(')','').replace('+','').replace('.','')
+                    tahap = lines[15].split()
+                    result['cakupan_tahap_1'] = tahap[0]
+                    result['cakupan_tahap_2'] = tahap[1]
+                else:
+                    tahap = lines[10].split()
+                    result['tahap_1'] = tahap[0].replace('(','').replace(')','').replace('+','').replace('.','')
+                    result['tahap_2'] = tahap[1].replace('(','').replace(')','').replace('+','').replace('.','')
+                    tahap = lines[13].split()
+                    result['cakupan_tahap_1'] = tahap[0]
+                    result['cakupan_tahap_2'] = tahap[1]
         
     return result
 
