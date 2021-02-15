@@ -128,5 +128,16 @@
         "cakupan_tahap_1": "72.77%",
         "cakupan_tahap_2": "28.98%",
         "date": "2021-02-14"
+    },
+    {
+        "total_sasaran": "181554465",
+        "sasaran_sdmk": "1468764",
+        "penambahan_tahap_1": "27348",
+        "penambahan_tahap_2": "57047",
+        "tahap_1": "1096095",
+        "tahap_2": "482625",
+        "cakupan_tahap_1": "74.63%",
+        "cakupan_tahap_2": "32.86%",
+        "date": "2021-02-15"
     }
 ]
