@@ -3,6 +3,8 @@ Monitoring Twit Vaksin
 Script ini bertujuan mengumpulkan laporan Kemenkes RI terkait perkembangan vaksinasi covid-19 sejak 31 Januari 2021. Data diambil dari twit KemenkesRI (@KemenkesRI). 
 Proses ocr menggunakan modul pytesseract.
 
+#### Berhubung format image sering berubah, maka repository ini akan diupdate tiap hari sekitar jam 17.00 WIB
+
 Requirements
 ---
 - Python 3
