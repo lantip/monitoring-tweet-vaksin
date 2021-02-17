@@ -17,7 +17,7 @@ def ocr_date(jpg):
     for lin in lins:
         if len(lin.strip()) > 1:
             lines.append(lin)    
-
+    
     if "REGISTRASI ULANG" in lines:
         if "UPDATE VAKSINASI" in lines[1]:
             result['total_sasaran'] = lines[4].split()[1].replace('.','')
@@ -69,17 +69,29 @@ def ocr_date(jpg):
                 except:
                     istart = 0
                 if istart > 0:
-                    result['total_sasaran'] = istart
-                    result['sasaran_sdmk'] = lines[3].replace('.','')
-                    result['penambahan_tahap_1'] = lines[5].replace('(','').replace(')','').replace('+','').replace('.','')
-                    result['penambahan_tahap_2'] = lines[6].replace('(','').replace(')','').replace('+','').replace('.','')
-                    tahap = lines[7].split()
-                    result['tahap_1'] = tahap[0].replace('(','').replace(')','').replace('+','').replace('.','')
-                    result['tahap_2'] = tahap[1].replace('(','').replace(')','').replace('+','').replace('.','')
-                    tahap = lines[10].split()
-                    result['cakupan_tahap_1'] = tahap[0]
-                    result['cakupan_tahap_2'] = tahap[1]
-
+                    if not 'CAKUPAN VAKSINASI CAKUPAN VAKSINASI' in lines[8]:
+                        result['total_sasaran'] = istart
+                        result['sasaran_sdmk'] = lines[3].replace('.','')
+                        tahap = lines[6].split()
+                        result['penambahan_tahap_1'] = tahap[0].replace('(','').replace(')','').replace('+','').replace('.','')
+                        result['penambahan_tahap_2'] = tahap[1].replace('(','').replace(')','').replace('+','').replace('.','')
+                        tahap = lines[7].split()
+                        result['tahap_1'] = tahap[0].replace('(','').replace(')','').replace('+','').replace('.','')
+                        result['tahap_2'] = tahap[1].replace('(','').replace(')','').replace('+','').replace('.','')
+                        tahap = lines[12].split()
+                        result['cakupan_tahap_1'] = tahap[0]
+                        result['cakupan_tahap_2'] = tahap[1]
+                    else:
+                        result['total_sasaran'] = istart
+                        result['sasaran_sdmk'] = lines[3].replace('.','')
+                        result['penambahan_tahap_1'] = lines[5].replace('(','').replace(')','').replace('+','').replace('.','')
+                        result['penambahan_tahap_2'] = lines[6].replace('(','').replace(')','').replace('+','').replace('.','')
+                        tahap = lines[7].split()
+                        result['tahap_1'] = tahap[0].replace('(','').replace(')','').replace('+','').replace('.','')
+                        result['tahap_2'] = tahap[1].replace('(','').replace(')','').replace('+','').replace('.','')
+                        tahap = lines[10].split()
+                        result['cakupan_tahap_1'] = tahap[0]
+                        result['cakupan_tahap_2'] = tahap[1]
                 else:
                     result['total_sasaran'] = lines[5].replace('.','')
                     result['sasaran_sdmk'] = lines[8].replace('.','')
@@ -108,11 +120,19 @@ f = []
 for (dirpath, dirnames, filenames) in walk(dir_path+'/data'):
     f.extend(filenames)
     break
-result = []
+try:
+    result = json.loads(open('result.json','r').read())
+except:
+    result = []
+dates = []
+for res in result:
+    dates.append(res['date'])
+
 for i in f:
-    rslt = ocr_date(i)
-    rslt['date'] = i.replace('.jpg','')
-    result.append(rslt)
+    if not i.replace('.jpg','') in dates:
+        rslt = ocr_date(i)
+        rslt['date'] = i.replace('.jpg','')
+        result.append(rslt)
 
 #result = hasil.items()
 #sorted_result = sorted(result)
