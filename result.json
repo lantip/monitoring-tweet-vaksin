@@ -150,5 +150,16 @@
         "cakupan_tahap_1": "76.32%",
         "cakupan_tahap_2": "36.57%",
         "date": "2021-02-16"
+    },
+    {
+        "total_sasaran": 181554465,
+        "sasaran_sdmk": "1468764",
+        "penambahan_tahap_1": "WS, KE1 by KE 2",
+        "penambahan_tahap_2": "28976 60181",
+        "tahap_1": "1149939",
+        "tahap_2": "597328",
+        "cakupan_tahap_1": "CAKUPAN",
+        "cakupan_tahap_2": "VAKSINASI",
+        "date": "2021-02-17"
     }
 ]
