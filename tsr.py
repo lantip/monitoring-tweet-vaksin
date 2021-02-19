@@ -70,17 +70,30 @@ def ocr_date(jpg):
                     istart = 0
                 if istart > 0:
                     if not 'CAKUPAN VAKSINASI CAKUPAN VAKSINASI' in lines[8]:
-                        result['total_sasaran'] = istart
-                        result['sasaran_sdmk'] = lines[3].replace('.','')
-                        tahap = lines[6].split()
-                        result['penambahan_tahap_1'] = tahap[0].replace('(','').replace(')','').replace('+','').replace('.','')
-                        result['penambahan_tahap_2'] = tahap[1].replace('(','').replace(')','').replace('+','').replace('.','')
-                        tahap = lines[7].split()
-                        result['tahap_1'] = tahap[0].replace('(','').replace(')','').replace('+','').replace('.','')
-                        result['tahap_2'] = tahap[1].replace('(','').replace(')','').replace('+','').replace('.','')
-                        tahap = lines[12].split()
-                        result['cakupan_tahap_1'] = tahap[0]
-                        result['cakupan_tahap_2'] = tahap[1]
+                        if len(lines) > 11:
+                            result['total_sasaran'] = istart
+                            result['sasaran_sdmk'] = lines[3].replace('.','')
+                            tahap = lines[6].split()
+                            result['penambahan_tahap_1'] = tahap[0].replace('(','').replace(')','').replace('+','').replace('.','')
+                            result['penambahan_tahap_2'] = tahap[1].replace('(','').replace(')','').replace('+','').replace('.','')
+                            tahap = lines[7].split()
+                            result['tahap_1'] = tahap[0].replace('(','').replace(')','').replace('+','').replace('.','')
+                            result['tahap_2'] = tahap[1].replace('(','').replace(')','').replace('+','').replace('.','')
+                            tahap = lines[12].split()
+                            result['cakupan_tahap_1'] = tahap[0]
+                            result['cakupan_tahap_2'] = tahap[1]
+                        else:
+                            result['total_sasaran'] = istart
+                            result['sasaran_sdmk'] = lines[3].replace('.','')
+                            tahap = lines[5].split()
+                            result['penambahan_tahap_1'] = tahap[0].replace('(','').replace(')','').replace('+','').replace('.','')
+                            result['penambahan_tahap_2'] = tahap[1].replace('(','').replace(')','').replace('+','').replace('.','')
+                            tahap = lines[6].split()
+                            result['tahap_1'] = tahap[0].replace('(','').replace(')','').replace('+','').replace('.','')
+                            result['tahap_2'] = tahap[1].replace('(','').replace(')','').replace('+','').replace('.','')
+                            tahap = lines[9].split()
+                            result['cakupan_tahap_1'] = tahap[0]
+                            result['cakupan_tahap_2'] = tahap[1]
                     else:
                         if 'VAKSINAS!' in lines[4]:
                             result['total_sasaran'] = istart
