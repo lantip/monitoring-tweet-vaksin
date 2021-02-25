@@ -17,6 +17,7 @@ def ocr_date(jpg):
     for lin in lins:
         if len(lin.strip()) > 1:
             lines.append(lin)    
+
     if "REGISTRASI ULANG" in lines:
         if "UPDATE VAKSINASI" in lines[1]:
             result['total_sasaran'] = lines[4].split()[1].replace('.','')
@@ -39,6 +40,25 @@ def ocr_date(jpg):
             result['tahap_2'] = tahap[1].replace('.','')
 
     else:
+        try:
+            stp = int(lines[3].replace('.',''))
+        except:
+            stp = None
+        if stp:
+            result['total_sasaran'] = lines[3].replace('.','')
+            result['sasaran_sdmk'] = lines[6].replace('.','')
+            tahap = lines[9].split()
+            result['penambahan_tahap_1'] = tahap[0].replace('(','').replace(')','').replace('+','').replace('.','')
+            result['penambahan_tahap_2'] = tahap[1].replace('(','').replace(')','').replace('+','').replace('.','')
+            tahap = lines[10].split()
+            result['tahap_1'] = tahap[0].replace('(','').replace(')','').replace('+','').replace('.','')
+            result['tahap_2'] = tahap[1].replace('(','').replace(')','').replace('+','').replace('.','')
+            tahap = lines[13].split()
+            result['cakupan_tahap_1'] = tahap[0]
+            result['cakupan_tahap_2'] = tahap[1]
+
+            return result
+
         if 'VAKSINASI' in lines[5]:
             result['total_sasaran'] = lines[6].replace('.','')
             result['sasaran_sdmk'] = lines[9].replace('.','')
