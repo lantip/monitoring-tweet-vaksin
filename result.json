@@ -249,5 +249,32 @@
         "cakupan_tahap_1": "99.53%",
         "cakupan_tahap_2": "58.13%",
         "date": "2021-02-25"
+    },
+    {
+        "total_sasaran": "181554465",
+        "sasaran_sdmk": "1468764",
+        "penambahan_tahap_1": "121661",
+        "penambahan_tahap_2": "12125",
+        "tahap_1": "1583581",
+        "tahap_2": "865870",
+        "date": "2021-02-26"
+    },
+    {
+        "total_sasaran": "181554465",
+        "sasaran_sdmk": "1468764",
+        "penambahan_tahap_1": "32584",
+        "penambahan_tahap_2": "116500",
+        "tahap_1": "1616165",
+        "tahap_2": "982370",
+        "date": "2021-02-27"
+    },
+    {
+        "total_sasaran": "181554465",
+        "sasaran_sdmk": "1468764",
+        "penambahan_tahap_1": "75559",
+        "penambahan_tahap_2": "216069",
+        "tahap_1": "1691724",
+        "tahap_2": "998439",
+        "date": "2021-02-28"
     }
 ]

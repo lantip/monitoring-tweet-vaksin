@@ -11,6 +11,7 @@ twint = {git = "https://github.com/himanshudabas/twint.git", editable = false, r
 opencv-python = "*"
 pytesseract = "*"
 pillow = "*"
+dateparser = "*"
 
 [requires]
 python_version = "3.7"
