@@ -18,21 +18,37 @@ def ocr_date(jpg):
     for lin in lins:
         if len(lin.strip()) > 1:
             lines.append(lin)    
-    
-    lne = lines[10].split()
-    tahap = []
-    for thp in lne:
-        cdgt = re.findall(r'\d+', thp)
-        if len(cdgt) > 0:
-            tahap.append(cdgt)
-    ssr = lines[11].split(' | ')
-    
-    result['total_sasaran'] = ssr[1].replace('.','').replace(' ','')
-    result['sasaran_sdmk'] = ssr[0].replace('.','').replace(' ','')
-    for idx, val in enumerate(tahap):
-        thps = ''.join(val)
-        result['penambahan_tahap_'+str(idx+1)] = thps.replace(' ','')
-    result['tahap_1'] = ssr[2].replace('(','').replace(')','').replace('+','').replace('.','').replace(' ','')
-    result['tahap_2'] = ssr[3].replace('(','').replace(')','').replace('+','').replace('.','').replace(' ','')
+
+    if ' | ' in lines[11]:
+        lne = lines[10].split()
+        tahap = []
+        for thp in lne:
+            cdgt = re.findall(r'\d+', thp)
+            if len(cdgt) > 0:
+                tahap.append(cdgt)
+        ssr = lines[11].split(' | ')
+        
+        result['total_sasaran'] = ssr[1].replace('.','').replace(' ','')
+        result['sasaran_sdmk'] = ssr[0].replace('.','').replace(' ','')
+        for idx, val in enumerate(tahap):
+            thps = ''.join(val)
+            result['penambahan_tahap_'+str(idx+1)] = thps.replace(' ','')
+        result['tahap_1'] = ssr[2].replace('(','').replace(')','').replace('+','').replace('.','').replace(' ','')
+        result['tahap_2'] = ssr[3].replace('(','').replace(')','').replace('+','').replace('.','').replace(' ','')
+    else:
+        ssr = lines[10].split('|')
+        result['total_sasaran'] = ssr[1].replace('.','').replace(' ','')
+        result['sasaran_sdmk'] = ssr[0].replace('.','').replace(' ','')
+        lne = lines[9].split()
+        tahap = []
+        for thp in lne:
+            cdgt = re.findall(r'\d+', thp)
+            if len(cdgt) > 0:
+                tahap.append(cdgt)
+        for idx, val in enumerate(tahap):
+            thps = ''.join(val)
+            result['penambahan_tahap_'+str(idx+1)] = thps.replace(' ','')
+        result['tahap_1'] = ssr[2].replace('(','').replace(')','').replace('+','').replace('.','').replace(' ','')
+        result['tahap_2'] = ssr[3].replace('(','').replace(')','').replace('+','').replace('.','').replace(' ','')
 
     return result
